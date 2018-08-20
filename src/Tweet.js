@@ -1,8 +1,8 @@
 import React from 'react';
 
-export function Tweet({tweet, isLiked, onClickLike}) {
+export function Tweet({ tweet, isLiked, onClickLike }) {
   return (
-    <div className="list-group-item" style={{maxWidth: 500, margin: '0 auto'}}>
+    <div className="list-group-item" style={{ maxWidth: 500, margin: '0 auto' }}>
       <div className="media">
         <img
           className="mr-3 rounded-circle"
@@ -13,8 +13,8 @@ export function Tweet({tweet, isLiked, onClickLike}) {
           <div className="font-weight-bold">@{tweet.username}</div>
           <p>{tweet.content}</p>
           <div className="d-flex justify-content-around mt-4">
-            <ActionIcon icon="comment-square" />
-            <ActionIcon icon="loop-square" />
+            <ActionIcon icon="comment-square"/>
+            <ActionIcon icon="loop-square"/>
             <ActionIcon
               icon="heart"
               count={tweet.likes}
@@ -22,7 +22,7 @@ export function Tweet({tweet, isLiked, onClickLike}) {
               highlightColor="red"
               onClick={onClickLike.bind(null, tweet.id)}
             />
-            <ActionIcon icon="envelope-closed" />
+            <ActionIcon icon="envelope-closed"/>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ export function Tweet({tweet, isLiked, onClickLike}) {
   );
 }
 
-function ActionIcon({icon, count, highlight, highlightColor, ...otherProps}) {
+function ActionIcon({ icon, count, highlight, highlightColor, ...otherProps }) {
   return (
     <span
       style={{
@@ -41,7 +41,7 @@ function ActionIcon({icon, count, highlight, highlightColor, ...otherProps}) {
       }}
       {...otherProps}
     >
-      <span className={`pr-2 oi oi-${icon}`} />
+      <span className={`pr-2 oi oi-${icon}`}/>
       {count > 0 && <span>{count}</span>}
     </span>
   );
